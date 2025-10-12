@@ -21,7 +21,9 @@ function RankingTable({ data = waterSystemsData }) {
   };
 
   const sortedData = useMemo(() => {
-    let filtered = [...data].filter(d => d.leadLines > 0);
+    let filtered = viewMode === 'most-unknown' 
+      ? [...data].filter(d => d.unknown > 0)
+      : [...data].filter(d => d.leadLines > 0);
     
     filtered.sort((a, b) => {
       let aVal = a[sortField];
@@ -40,7 +42,7 @@ function RankingTable({ data = waterSystemsData }) {
     });
     
     return filtered;
-  }, [data, sortField, sortDirection]);
+  }, [data, sortField, sortDirection, viewMode]);
 
   const getProgressClass = (percent) => {
     if (percent >= 50) return 'good';
@@ -93,6 +95,16 @@ function RankingTable({ data = waterSystemsData }) {
           }}
         >
           Needs Attention
+        </button>
+        <button 
+          className={`view-btn ${viewMode === 'most-unknown' ? 'active' : ''}`}
+          onClick={() => {
+            setViewMode('most-unknown');
+            setSortField('unknown');
+            setSortDirection('desc');
+          }}
+        >
+          Most Unknown Lines
         </button>
       </div>
 
@@ -152,6 +164,15 @@ function RankingTable({ data = waterSystemsData }) {
               </th>
               <th 
                 className="sortable number-col" 
+                onClick={() => handleSort('unknown')}
+              >
+                Unknown Lines
+                {sortField === 'unknown' && (
+                  <span className="sort-indicator">{sortDirection === 'asc' ? ' ↑' : ' ↓'}</span>
+                )}
+              </th>
+              <th 
+                className="sortable number-col" 
                 onClick={() => handleSort('totalReplaced')}
               >
                 Replaced
@@ -187,6 +208,9 @@ function RankingTable({ data = waterSystemsData }) {
                 </td>
                 <td className="number-col">{system.population.toLocaleString()}</td>
                 <td className="number-col lead-count">{system.leadLines.toLocaleString()}</td>
+                <td className="number-col" style={{color: '#ca8a04', fontWeight: 600}}>
+                  {system.unknown.toLocaleString()}
+                </td>
                 <td className="number-col">{system.totalReplaced.toLocaleString()}</td>
                 <td className="number-col">
                   <div className="progress-cell">
