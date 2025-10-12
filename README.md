@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Michigan Lead Service Line Replacement Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive data visualization tracking lead service line replacement progress across Michigan water systems (2021-2024).
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+View the dashboard at: [https://ninaplanetdetroit.github.io/lead-dashboard](https://ninaplanetdetroit.github.io/lead-dashboard)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This dashboard visualizes data from Michigan's Environmental Quality Department (EGLE) showing:
+- 580,030 total lead service lines requiring replacement
+- 69,891 lines replaced (12% progress) from 2021-2024
+- 3.9 million Michigan residents served by systems with known lead lines
+- Annual replacement trends showing 138% increase from 2021 to 2024
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technology Stack
 
-### `npm test`
+- **React** - UI framework
+- **Recharts** - Data visualization library
+- **CSS3** - Styling and animations
+- **GitHub Pages** - Hosting
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Animated counter statistics
+- Interactive line chart showing annual replacement trends
+- Pie chart displaying service line composition by material
+- Responsive design for mobile and desktop
+- Real-time progress bar animation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Data Source
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Michigan EGLE Community Drinking Supply Monitoring Inventory (CDSMI) and Lead Service Line Replacement Reports
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation & Development
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v14 or higher)
+- npm
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone the repository
+git clone https://github.com/ninaplanetdetroit/lead-dashboard.git
+cd lead-dashboard
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Run development server
+npm start
+```
 
-## Learn More
+The app will open at `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Build for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+```
 
-### Code Splitting
+### Deploy to GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run deploy
+```
 
-### Analyzing the Bundle Size
+## Embedding
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To embed this dashboard on a website, use an iframe:
 
-### Making a Progressive Web App
+```html
+<iframe 
+  src="https://ninaplanetdetroit.github.io/lead-dashboard" 
+  width="100%" 
+  height="1600" 
+  frameborder="0" 
+  style="border: none;">
+</iframe>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Project Structure
 
-### Advanced Configuration
+```
+michigan-lead-dashboard/
+├── public/
+├── src/
+│   ├── App.js          # Main dashboard component
+│   ├── App.css         # Dashboard styles
+│   └── index.js        # React entry point
+├── package.json        # Dependencies and scripts
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Key Insights from the Data
 
-### Deployment
+- **Scale of Challenge**: Over half a million service lines need replacement
+- **Progress Acceleration**: Replacement rates more than doubled from 2021 to 2024
+- **Population Impact**: 52.8% of Michigan's population served by systems with known lead
+- **Unknown Materials**: 315,372 service lines still need material identification
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Future Enhancements
 
-### `npm run build` fails to minify
+- Search functionality for specific water systems
+- County-level filtering
+- Interactive map view
+- Downloadable data reports
+- Historical trend projections
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+Data is public domain. Dashboard code available for reuse with attribution.
+
+## Contact
+
+Built by Planet Detroit for public information purposes.
+
+## Acknowledgments
+
+Data provided by Michigan Department of Environment, Great Lakes, and Energy (EGLE)
