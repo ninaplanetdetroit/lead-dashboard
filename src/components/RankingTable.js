@@ -122,11 +122,11 @@ function RankingTable({ data = waterSystemsData }) {
           </div>
           <div className="legend-item">
             <div className="status-indicator compliant"></div>
-            <span>Compliant (≥20%)</span>
+            <span>Compliant (≥20% average replacement, 2021–2024)</span>
           </div>
           <div className="legend-item">
             <div className="status-indicator not-compliant"></div>
-            <span>Not in compliance (&lt;20%)</span>
+            <span>Not in compliance (&lt;20% average replacement, 2021–2024)</span>
           </div>
         </div>
       </div>

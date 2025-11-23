@@ -55,7 +55,7 @@ function LeadLineMap() {
 
   return (
     <div className="map-container">
-      <h2>Geographic Distribution of Lead Service Lines in Michigan</h2>
+      <h2>Geographic Distribution of Lead Service Line Replacement Compliance in Michigan</h2>
       <p className="map-subtitle">
         Showing {filteredSystems.length} of {systemsWithCoords.length} water systems with location data
       </p>
@@ -76,7 +76,7 @@ function LeadLineMap() {
             checked={showCompliant}
             onChange={(e) => setShowCompliant(e.target.checked)}
           />
-          <span className="compliant-label">● Compliant (≥20%)</span>
+          <span className="compliant-label">● Compliant (≥20% replaced between 2021 and 2024)</span>
         </label>
         <label>
           <input
@@ -84,7 +84,7 @@ function LeadLineMap() {
             checked={showNonCompliant}
             onChange={(e) => setShowNonCompliant(e.target.checked)}
           />
-          <span className="noncompliant-label">● Not in Compliance (&lt;20%)</span>
+          <span className="noncompliant-label">● Not in Compliance (&lt;20% between 2021 and 2024)</span>
         </label>
       </div>
 

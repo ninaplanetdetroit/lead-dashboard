@@ -3,20 +3,18 @@ import About from './components/About';
 import Dashboard from './components/Dashboard';
 import WaterSystemDirectory from './components/WaterSystemDirectory';
 import RankingTable from './components/RankingTable';
-import UnknownMaterialsAlert from './components/UnknownMaterialsAlert';
 import LeadLineMap from './components/LeadLineMap';
 import './App.css';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('map');
 
   const tabs = [
-    { id: 'about', label: 'About', icon: 'ℹ️' },
-    { id: 'dashboard', label: 'Overview', icon: '📊' },
+    { id: 'map', label: 'Map', icon: '🗺️' },
     { id: 'directory', label: 'Search Systems', icon: '🔍' },
     { id: 'ranking', label: 'Rankings', icon: '📋' },
-    { id: 'unknown', label: 'Data Gaps', icon: '⚠️' },
-    { id: 'map', label: 'Map', icon: '🗺️' }
+    { id: 'dashboard', label: 'Overview', icon: '📊' },
+    { id: 'about', label: 'About', icon: 'ℹ️' }
   ];
 
   return (
@@ -82,7 +80,6 @@ function App() {
         {activeTab === 'dashboard' && <Dashboard />}
         {activeTab === 'directory' && <WaterSystemDirectory />}
         {activeTab === 'ranking' && <RankingTable />}
-        {activeTab === 'unknown' && <UnknownMaterialsAlert />}
         {activeTab === 'map' && <LeadLineMap />}
       </main>
 

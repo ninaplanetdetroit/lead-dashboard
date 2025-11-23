@@ -95,6 +95,10 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
         <div className="results-count">
           Showing {filteredAndSortedData.length} systems
         </div>
+        
+        <div className="compliance-info">
+          <strong>Understanding Compliance:</strong> A system is considered "compliant" if it has replaced an average of 20% of its identified lead service lines during the 4-year period from 2021–2024. Systems with no identified lead lines are shown separately as "No lead lines identified."
+        </div>
       </div>
 
       <div className="sort-controls">
@@ -206,6 +210,16 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
                 
                 <div className="card-footer">
                   <span className="pwsid">ID: {system.pwsid}</span>
+                  {system.epaLink && (
+                    <a 
+                      href={system.epaLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="epa-link-button"
+                    >
+                      View EPA Report →
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

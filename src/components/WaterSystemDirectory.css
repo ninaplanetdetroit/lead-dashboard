@@ -83,6 +83,17 @@
   font-weight: 600;
 }
 
+.compliance-info {
+  margin-top: 15px;
+  padding: 12px 16px;
+  background: #f0f9ff;
+  border-left: 4px solid #0284c7;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #0c4a6e;
+  line-height: 1.5;
+}
+
 .systems-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -225,12 +236,32 @@
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pwsid {
   font-size: 0.8rem;
   color: #94a3b8;
   font-family: monospace;
+}
+
+.epa-link-button {
+  display: inline-block;
+  padding: 8px 14px;
+  background-color: #0284c7;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.epa-link-button:hover {
+  background-color: #0369a1;
+  text-decoration: none;
 }
 
 .sort-controls {
