@@ -262,7 +262,7 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
         <div className="progress-explainer">
           <h4>Understanding "Progress"</h4>
           <div className="formula-box">
-            <code>% Replaced = (Lines Replaced ÷ (Total to Identify and/or Replace+Lines Replaced)) × 100</code>
+            <code>% Replaced = (Lines Replaced ÷ (Total to Identify and/or Replace + Lines Replaced)) × 100</code>
           </div>
           <p>
             <strong>Note:</strong> We calculate Progress based on % Replaced as described above. Systems with many "Unknown" lines may show low progress even if they've replaced all <em>known</em> lead lines. 
