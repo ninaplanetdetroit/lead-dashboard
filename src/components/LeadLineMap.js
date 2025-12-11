@@ -173,9 +173,10 @@ function LeadLineMap() {
                   
                   {system.status !== 'Inventory not received or incomplete' && (
                     <>
-                      <p><strong>Lead Lines:</strong> {system.leadLines.toLocaleString()}</p>
+                      <p><strong>Known Lead Lines:</strong> {system.leadLines.toLocaleString()}</p>
+                      <p><strong>GPCL:</strong> {system.gpcl.toLocaleString()}</p>
                       <p><strong>Total to Replace:</strong> {system.totalToReplace.toLocaleString()}</p>
-                      <p><strong>Replaced:</strong> {system.totalReplaced.toLocaleString()}</p>
+                      <p><strong>Total Replaced:</strong> {system.totalReplaced.toLocaleString()}</p>
                       {system.totalToReplace > 0 && (
                         <p><strong>Progress:</strong> {system.percentReplaced.toFixed(1)}%</p>
                       )}
@@ -239,6 +240,17 @@ function LeadLineMap() {
         <p className="legend-note">
           <em>Circle size = Total lines to be identified or replaced</em>
         </p>
+        
+        {/* Progress Explanation */}
+        <div className="progress-explanation">
+          <h4>Understanding "Progress"</h4>
+          <p className="progress-formula">
+            <code>% Replaced = (Lines Replaced ÷ (Total to Identify and/or Replace + Lines Replaced)) × 100</code>
+          </p>
+          <p className="progress-note">
+            <strong>Note:</strong> We calculate Progress based on % Replaced as described above. Systems with many "Unknown" lines may show low progress even if they've replaced all known lead lines. The unknown lines still need to be identified and potentially replaced, which is why they're included in the denominator.
+          </p>
+        </div>
       </div>
 
       {/* Info Box */}

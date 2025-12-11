@@ -202,6 +202,46 @@
   font-size: 13px;
 }
 
+/* Progress Explanation */
+.progress-explanation {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.progress-explanation h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.progress-formula {
+  margin: 0 0 12px 0;
+}
+
+.progress-formula code {
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 13px;
+  color: #334155;
+  display: block;
+  overflow-x: auto;
+}
+
+.progress-note {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.progress-note strong {
+  color: #475569;
+}
+
 /* Info Box */
 .map-info {
   margin-top: 20px;
@@ -259,6 +299,15 @@
 
   .legend-table th:last-child {
     display: none;
+  }
+
+  .progress-formula code {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .progress-note {
+    font-size: 12px;
   }
 }
 
